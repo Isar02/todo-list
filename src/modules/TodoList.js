@@ -1,7 +1,6 @@
 import { compareAsc, toDate } from 'date-fns'
-import Project from './project'
-import Task from './task'
-import task from './task'
+import Project from './Project'
+import Task from './Task'
 
 export default class TodoList {
     constructor() {
@@ -49,7 +48,7 @@ export default class TodoList {
 
             const todayTasks = project.getTasksToday()
             todayTasks.forEach((task) => {
-                const taskName = `${task.getName()} (${project.getName})`
+                const taskName = `${task.getName()} (${project.getName()})`
                 this.getProject('Today').addTask(new Task(taskName, task.getDate()))
             })
         })
